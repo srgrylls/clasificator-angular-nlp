@@ -6,26 +6,36 @@
     <div class="input-zone">
       <input type="text" placeholder="Introduce un comentario" (change)="modelChanged($event.target.value)"
         (keyup.enter)="analyze()" />
-      <img src="../assets/search.png" (click)="analyze()" />
-    </div>
-    <div class="result" *ngIf="result === true">
-      <span *ngIf="positives > negatives" class="positive-result">
-        ¡Gracias por ese comentario tan positivo!
-      </span>
-      <span *ngIf="positives < negatives" class="negative-result">
-        Creo que tu comentario no es de lo más apropiado.
-      </span>
-      <span *ngIf="positives === negatives" class="neutral-result">
-        Tu comentario no es relevante para mí
-      </span>
-    </div>
-    <div class="details" *ngIf="result === true">
-      <div class="positives">
-        <span>Coincidencia de palabras positivas: {{positives}}</span>
+        <img src="../assets/search.png" (click)="analyze()" />
       </div>
-      <div class="negatives">
-        <span>Coincidencia de palabras negativas: {{negatives}}</span>
-      </div>
+      @if (result === true) {
+        <div class="result">
+          @if (positives > negatives) {
+            <span class="positive-result">
+              ¡Gracias por ese comentario tan positivo!
+            </span>
+          }
+          @if (positives < negatives) {
+            <span class="negative-result">
+              Creo que tu comentario no es de lo más apropiado.
+            </span>
+          }
+          @if (positives === negatives) {
+            <span class="neutral-result">
+              Tu comentario no es relevante para mí
+            </span>
+          }
+        </div>
+      }
+      @if (result === true) {
+        <div class="details">
+          <div class="positives">
+            <span>Coincidencia de palabras positivas: {{positives}}</span>
+          </div>
+          <div class="negatives">
+            <span>Coincidencia de palabras negativas: {{negatives}}</span>
+          </div>
+        </div>
+      }
     </div>
   </div>
-</div>
