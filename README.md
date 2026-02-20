@@ -1,43 +1,107 @@
 # Clasificator · Spanish Unsupervised Machine Learning
 
-**Proyecto generado con Angular que trata sobre el análisis del lenguaje natural, clasificación de opiniones mediante aprendizaje no supervisado.**<br />
-Project generated with Angular that deals with the analysis of natural language, classification of opinions through unsupervised learning.
+Angular project for **natural language analysis** and **opinion classification** using **unsupervised machine learning** techniques.
 
-## Aprendizaje No Supervisado (Unsupervised Machine Learning)
+---
 
-**El aprendizaje no supervisado es una técnica de clasificación de opiniones que no requiere de información etiquetada previamente. Se caracteriza por el uso de recursos léxicos para determinar la orientación semántica de las palabras presentes en un comentario.**<br />
-Unsupervised learning is a technique of rating opinions that does not require previously labeled information. It is characterized by the use of lexical resources to determine the semantic orientation of the words present in a comment.
+## Unsupervised Machine Learning
 
-**Se reduce el comentario a su mínima expresión, esto es, quedarnos con palabras únicas que tienen significado propio (tokens), para ello se eliminan las palabras vacías (stopwords) como son las preposiciones, por ejemplo, y finalmente se comparan con una bolsa de palabras positivas y negativas para hacer un recuento total de coincidencias obteniendo la polaridad del comentario (positivo, negativo o neutro).**<br />
-The comment is reduced to its minimum expression, that is, staying with unique words that have their own meaning (tokens), for this purpose empty words (stopwords) such as prepositions are eliminated, for example, and finally they are compared with a bag of positive and negative words to make a total count of coincidences obtaining the polarity of the comment (positive, negative or neutral).
+Unsupervised learning is a classification technique that does not require previously labeled data.
+It relies on **lexical resources** to determine the semantic orientation of words in a comment.
 
-### Pre-requisitos (Pre requirements)
+The process consists of:
+- Normalizing the input text
+- Removing punctuation
+- Removing stopwords
+- Comparing tokens against positive and negative word lists
+- Calculating the final polarity: **positive, negative, or neutral**
 
-_Angular CLI_
+---
+
+## Requirements
+
+This project is fully updated to **Angular 21** and uses modern tooling with **zero known vulnerabilities**.
+
+### Required software
+- Node.js >= 20
+- npm >= 10
+- Angular CLI 21
+
+Install Angular CLI globally:
+
+```bash
+npm install -g @angular/cli
+```
+
+---
+
+## Installation
+
+```bash
+cd clasificator
+npm install
+```
+
+---
+
+## Development server
+
+```bash
+npm start
+```
+
+Application runs at:
 
 ```
-npm install -g @angular/cli@next
-```
-### Instalación y lanzamiento (Installation and launch)
-
-**Nos posicionamos en la carpeta del proyecto**<br />
-We position ourselves in the project folder
-
-```
-cd /clasificator
+http://localhost:4200
 ```
 
-**Lo ejecutamos**<br />
-We run it 
+---
+
+## Production build
+
+```bash
+npm run build
+```
+
+Output:
 
 ```
-ng serve
+dist/clasificator
 ```
 
-**Por defecto, se lanzará en http://localhost:4200**<br />
-By default, it will be launched at http://localhost:4200
+---
 
-### Referencia (Reference)
+## Unit Testing
 
-_Molina-González, M. D., Martínez-Cámara, E., Martín-Valdivia, M. T., & Perea-Ortega, J. M. (2013). Semantic orientation for polarity classification in Spanish reviews. Expert Systems with Applications, 40(18), 7250-7257._
+Run tests (watch mode):
 
+```bash
+npm test
+```
+
+Run tests once (CI):
+
+```bash
+npm run test:ci
+```
+
+Run tests with coverage:
+
+```bash
+npm run test:coverage
+```
+
+Coverage report:
+
+```
+coverage/index.html
+```
+
+---
+
+## References
+
+Molina-González, M. D., Martínez-Cámara, E., Martín-Valdivia, M. T., & Perea-Ortega, J. M. (2013).
+Semantic orientation for polarity classification in Spanish reviews.
+Expert Systems with Applications, 40(18), 7250-7257.
